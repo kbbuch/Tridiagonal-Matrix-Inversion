@@ -1,0 +1,48 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'MyDesign' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : MyDesign
+Version: K-2015.06-SP1
+Date   : Wed Nov 16 01:18:10 2016
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: fast   Library: NangateOpenCellLibrary_PDKv1_2_v2008_10_fast_nldm
+Wire Load Model Mode: top
+
+  Startpoint: U1/clock_r_REG7706_S4
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: U1/clock_r_REG7708_S5
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  U1/clock_r_REG7706_S4/CK (DFF_X2)      0.0000 #   0.0000 r
+  U1/clock_r_REG7706_S4/QN (DFF_X2)      0.0521     0.0521 f
+  U1/clock_r_REG7708_S5/D (DFF_X1)       0.0000     0.0521 f
+  data arrival time                                 0.0521
+
+  clock clock (rise edge)                0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  clock uncertainty                      0.0500     0.0500
+  U1/clock_r_REG7708_S5/CK (DFF_X1)      0.0000     0.0500 r
+  library hold time                      0.0005     0.0505
+  data required time                                0.0505
+  -----------------------------------------------------------
+  data required time                                0.0505
+  data arrival time                                -0.0521
+  -----------------------------------------------------------
+  slack (MET)                                       0.0017
+
+
+1
